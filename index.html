@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aryan Kumar — Student & Developer</title>
+<meta name="description" content="Aryan Kumar’s portfolio — a student at SIRT Bhopal exploring real-time tracking and driver safety." />
+<script>document.documentElement.classList.add("js");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- SVG LIQUID FILTERS -->
+<svg class="svg-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="liquidGlass" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence id="liquidTurbulence" type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="2" seed="7" result="noise"/>
+      <feDisplacementMap id="liquidDisplacement" in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="liquidGlassStrong" x="-30%" y="-30%" width="160%" height="160%">
+      <feTurbulence id="liquidTurbulenceStrong" type="fractalNoise" baseFrequency="0.02 0.03" numOctaves="3" seed="11" result="noise2"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise2" scale="28" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"/>
+      <feBlend in="SourceGraphic" in2="goo"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"><span></span></div>
+
+<!-- BACKGROUND -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="blob blob-1" data-parallax="0.35"></div>
+  <div class="blob blob-2" data-parallax="-0.25"></div>
+  <div class="blob blob-3" data-parallax="0.5"></div>
+  <div class="blob blob-4" data-parallax="-0.4"></div>
+  <div class="blob blob-5" data-parallax="0.2"></div>
+  <div class="noise"></div>
+</div>
+
+<!-- NAV -->
+<header class="nav-wrap" id="navWrap">
+  <nav class="nav glass" id="mainNav">
+    <a href="#home" class="logo">
+      <span class="logo-mark">A</span>
+      <span class="logo-text">aryan<span class="dot">.</span></span>
+      <span class="logo-badge">portfolio</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Interests</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#experience" class="nav-link">Journey</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-liquid btn-sm magnetic" data-magnetic="0.3">
+        <span class="btn-liquid__refraction"></span>
+        <span class="btn-liquid__specular"></span>
+        <span class="btn-liquid__label">Let's Talk ↗</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow reveal">
+        <span class="pulse-dot"></span>
+        Student at SIRT Bhopal
+        <span class="eyebrow-sep"></span>
+        <span class="eyebrow-loc">Bhopal, India</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line reveal"><span class="word">Hi, I'm</span> <em class="serif">Aryan Kumar</em></span>
+        <span class="line reveal delay-1"><span class="word">I craft</span> <span class="liquid-word" id="rotator">liquid interfaces</span></span>
+        <span class="line reveal delay-2"><span class="word">that feel</span> <span class="highlight-word">alive.</span></span>
+      </h1>
+
+      <p class="hero-sub reveal delay-2">
+        I’m a student at SIRT Bhopal, building projects around real-time tracking and driver safety — and exploring new ideas through hackathons.
+      </p>
+
+      <div class="hero-ctas reveal delay-3">
+        <!-- PRIMARY 3D LIQUID GLASS BUTTON -->
+        <a href="#work" class="btn btn-liquid btn-primary magnetic" data-magnetic="0.45" id="primaryBtn">
+          <span class="btn-liquid__refraction"></span>
+          <span class="btn-liquid__specular"></span>
+          <span class="btn-liquid__shine"></span>
+          <span class="btn-liquid__label">
+            <span class="btn-icon">✦</span> View My Work
+          </span>
+          <span class="btn-liquid__arrow">→</span>
+        </a>
+
+        <!-- SECONDARY GLASS BUTTON -->
+        <a href="#contact" class="btn btn-glass magnetic" data-magnetic="0.35">
+          <span class="btn-glass__specular"></span>
+          <span class="btn-glass__label">Get in Touch</span>
+        </a>
+      </div>
+
+      <div class="hero-meta reveal delay-3">
+        <div class="hero-meta-text"><span class="meta-sparkle">✳</span> Made for the curious <span class="meta-divider">/</span> Designed to be explored</div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- LIQUID GLASS CARD -->
+      <div class="hero-card glass tilt" id="heroCard">
+        <div class="hero-card__glow"></div>
+        <div class="hero-card__top">
+          <div class="window-dots"><span></span><span></span><span></span></div>
+          <span class="hero-card__tag">a little about me</span>
+          <span class="live-badge"><i></i> HELLO</span>
+        </div>
+        <div class="hero-card__avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="hero-avatar">A</div>
+          <div class="float-chip chip-1 glass-mini">✳ Real-time tracking</div>
+          <div class="float-chip chip-2 glass-mini">✦ Driver safety</div>
+          <div class="float-chip chip-3 glass-mini">● Hackathons</div>
+        </div>
+        <div class="hero-card__info">
+          <h3>Aryan Kumar</h3>
+          <p>Student at SIRT Bhopal</p>
+          <div class="hero-card__stats">
+            <div><b>2</b><span>Projects</span></div>
+            <div><b>2</b><span>Hackathons</span></div>
+            <div><b>✦</b><span>SIRT Bhopal</span></div>
+          </div>
+        </div>
+        <div class="hero-card__footer">
+          <div class="mini-progress"><span style="--w:92%"></span></div>
+          <span>Always exploring → <b>what’s next</b></span>
+        </div>
+      </div>
+
+      <!-- floating glass pills -->
+      <div class="float-pill pill-1 glass reveal" data-float> <span>💎</span> Liquid Glass <b>100%</b></div>
+      <div class="float-pill pill-2 glass reveal delay-1" data-float> <span>🚀</span> Made to <b>move</b></div>
+    </div>
+  </div>
+
+  <!-- marquee -->
+  <div class="marquee-wrap reveal">
+    <div class="marquee" id="marquee">
+      <span>Real-time tracking ✦ Driver safety ✦ Camera tracking ✦ Problem solving ✦ Hackathons ✦ SIRT Bhopal ✦</span>
+      <span>Real-time tracking ✦ Driver safety ✦ Camera tracking ✦ Problem solving ✦ Hackathons ✦ SIRT Bhopal ✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag glass-mini">01 — About me</span>
+      <h2>Curious minds build <em>meaningful things.</em></h2>
+      <p>Hi, I’m Aryan Kumar, a student at SIRT Bhopal. I enjoy exploring real-time technology and turning ideas into projects that tackle practical problems.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card glass reveal tilt"><div class="about-card__icon">⌂</div><h3>Learning at SIRT</h3><p>Studying at SIRT Bhopal and exploring technology through hands-on projects.</p><div class="about-card__list"><span>SIRT Bhopal</span><span>Student</span></div></div>
+      <div class="about-card glass reveal delay-1 tilt"><div class="about-card__icon">◎</div><h3>Building in real time</h3><p>Working on ideas in car tracking, driver safety management, and real-time camera tracking.</p><div class="about-card__list"><span>Tracking</span><span>Safety</span></div></div>
+      <div class="about-card glass reveal delay-2 tilt"><div class="about-card__icon">✦</div><h3>Hackathon spirit</h3><p>I’ve participated in two hackathons, taking the opportunity to learn, build, and explore new ideas.</p><div class="about-card__list"><span>2 hackathons</span><span>Learning</span></div></div>
+    </div>
+    <div class="about-strip glass reveal">
+      <div class="strip-item"><b>2</b><span>Projects</span></div><div class="strip-sep"></div>
+      <div class="strip-item"><b>2</b><span>Hackathons participated</span></div><div class="strip-sep"></div>
+      <div class="strip-item"><b>✦</b><span>SIRT Bhopal</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag glass-mini">02 — Interests</span>
+      <h2>What I’m <em>exploring</em></h2>
+      <p>Ideas and challenges that inspire me to keep learning and building.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-card glass reveal tilt"><div class="about-card__icon">⌁</div><h3>Real-time tracking</h3><p>Exploring ways to follow moving things as they happen.</p></div>
+      <div class="about-card glass reveal delay-1 tilt"><div class="about-card__icon">✧</div><h3>Driver safety</h3><p>Thinking about technology that can support safer driving.</p></div>
+      <div class="about-card glass reveal delay-2 tilt"><div class="about-card__icon">◎</div><h3>Camera tracking</h3><p>Exploring real-time tracking through a camera.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag glass-mini">03 — Selected work</span>
+      <h2>Ideas brought <em>to life.</em></h2>
+      <p>A look at my projects exploring real-time tracking and safety.</p>
+    </div>
+    <div class="work-grid projects-grid" id="workGrid">
+      <article class="work-card glass reveal tilt" data-tilt>
+        <div class="work-thumb thumb-1"><span class="thumb-emoji" aria-hidden="true">🚘</span><span class="thumb-badge">Project 01</span><span class="thumb-glass"></span></div>
+        <div class="work-body"><div class="work-meta"><span>Tracking & safety</span></div><h3>Real-Time Car Tracking & Driver Safety Management</h3><p>A project focused on tracking cars in real time and managing driver safety.</p><div class="work-tags"><span>Real-time tracking</span><span>Driver safety</span></div></div>
+      </article>
+      <article class="work-card glass reveal delay-1 tilt" data-tilt>
+        <div class="work-thumb thumb-2"><span class="thumb-emoji" aria-hidden="true">📷</span><span class="thumb-badge">Project 02</span><span class="thumb-glass"></span></div>
+        <div class="work-body"><div class="work-meta"><span>Camera tracking</span></div><h3>Real-Time Camera Tracking</h3><p>A project exploring camera-based tracking in real time.</p><div class="work-tags"><span>Camera</span><span>Real-time tracking</span></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag glass-mini">04 — My journey</span>
+      <h2>Learning by <em>doing.</em></h2>
+      <p>Every project and challenge is a chance to grow.</p>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="timeline-line"><span id="timelineFill"></span></div>
+      <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-card glass"><span class="tl-date">Education</span><h3>SIRT Bhopal</h3><p>A student exploring technology and building projects in Bhopal.</p></div></div>
+      <div class="tl-item reveal delay-1"><div class="tl-dot"></div><div class="tl-card glass"><span class="tl-date">Participation</span><h3>Two hackathons</h3><p>Participated in two hackathons, learning through the experience of building and exploring ideas.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-wrap glass reveal">
+      <div class="contact-left">
+        <span class="section-tag glass-mini">05 — Say hello</span>
+        <h2>Have an idea?<br>Let's make it <em>real.</em></h2>
+        <p>Good things start with a conversation. Find me on GitHub and let's create something worth sharing.</p>
+        <a href="https://github.com/aryan7475-max" target="_blank" rel="noopener noreferrer" class="btn btn-liquid btn-primary magnetic" data-magnetic="0.35">
+          <span class="btn-liquid__refraction"></span><span class="btn-liquid__specular"></span><span class="btn-liquid__shine"></span>
+          <span class="btn-liquid__label">Find me on GitHub</span><span class="btn-liquid__arrow">↗</span>
+        </a>
+      </div>
+      <div class="contact-art" aria-hidden="true"><div class="contact-orb"><span>✳</span></div><div class="contact-art-label">LET’S CREATE<br><b>SOMETHING GOOD.</b></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>© 2026 Aryan Kumar — Crafted with liquid glass & ♥</span>
+    <span class="footer-links"><a href="#home">Back to top ↑</a></span>
+  </div>
+</footer>
+
+<!-- BACK TO TOP LIQUID BUTTON -->
+<button class="to-top glass" id="toTop" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
